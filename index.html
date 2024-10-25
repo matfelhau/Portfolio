@@ -4,12 +4,28 @@
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-3EP9HQP40W"></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-3EP9HQP40W');
+        function loadGoogleAnalytics() {
+            var script = document.createElement('script');
+            script.async = true;
+            script.src = "https://www.googletagmanager.com/gtag/js?id=G-3EP9HQP40W";
+            document.head.appendChild(script);
+    
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-3EP9HQP40W');
+        }
+    
+        function checkCookieConsent() {
+            const consent = localStorage.getItem('cookieConsent');
+            if (consent === 'accepted') {
+                loadGoogleAnalytics(); 
+            }
+        }
+    
+        checkCookieConsent();
     </script>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mathias Felde Haugen Portefølje</title>
@@ -20,6 +36,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <link rel="icon" href="img/favicon.ico" type="image/x-icon">
 </head>
+
 <body>
     <div class="container">
         <header>
@@ -290,9 +307,69 @@
         <footer>
             <p>Laget av Mathias Felde Haugen © 2024</p>
             <p id="last-updated">Sist oppdatert: </p>
+            <p><a href="policy.html" target="_blank" rel="noopener noreferrer">Cookie Policy</a></p>     
         </footer>  
     </div>
             
+    <!-- Cookie Consent Banner -->
+    <div id="cookieConsent">
+        <p>
+            Dette nettstedet bruker cookies for å forbedre din opplevelse. Ved å fortsette godtar du vår <a href="policy.html" target="_blank" rel="noopener noreferrer">cookie policy</a>. 
+            <button id="acceptCookies" class="btn btn-primary">Jeg godtar</button>
+            <button id="declineCookies" class="btn btn-secondary">Avslå</button>
+        </p>
+    </div>
+
+    <!-- Cookie Consent Styles -->
+    <style>
+        #cookieConsent {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 15px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            z-index: 1000;
+            display: none;
+        }
+        #cookieConsent p {
+            margin: 0;
+            font-size: 14px;
+        }
+        #cookieConsent button {
+            margin-left: 10px;
+            padding: 10px;
+            background-color: #5A67D8;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        #cookieConsent .btn-secondary {
+            background-color: #555;
+        }
+    </style>
+
+    <!-- Cookie Consent and Google Analytics Consent Script -->
+    <script>
+        // Show the cookie banner if no consent has been provided
+        if (!localStorage.getItem('cookieConsent')) {
+            document.getElementById('cookieConsent').style.display = 'block';
+        }
+
+        document.getElementById('acceptCookies').addEventListener('click', function() {
+            localStorage.setItem('cookieConsent', 'accepted');
+            document.getElementById('cookieConsent').style.display = 'none';
+            loadGoogleAnalytics();  // Load Google Analytics after consent
+        });
+
+        document.getElementById('declineCookies').addEventListener('click', function() {
+            localStorage.setItem('cookieConsent', 'declined');
+            document.getElementById('cookieConsent').style.display = 'none';
+        });
+    </script>
+    
     <script>
         const lastUpdated = new Date(document.lastModified);
         const options = { year: 'numeric', month: 'long', day: 'numeric' };
