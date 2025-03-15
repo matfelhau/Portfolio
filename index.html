@@ -29,55 +29,70 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mathias Felde Haugen Portefølje</title>
-    <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
 </head>
 
-<body>
-    <div class="container">
-        <header>
-            <nav aria-label="Hovednavigasjon">
-                <div class="logo">
-                    <a href="#">Mathias</a>
+<body class="bg-gray-50 font-[Poppins] relative overflow-x-hidden">
+    <div class="absolute inset-0 -z-10 overflow-hidden">
+        <div class="absolute -inset-[100%] opacity-50">
+            <div class="absolute top-0 -left-[100%] w-[300%] h-[100%] animate-[gradient_15s_linear_infinite] bg-gradient-to-r from-blue-100 via-purple-100 to-blue-100"></div>
+        </div>
+    </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <header class="py-6">
+            <nav class="flex justify-between items-center" aria-label="Hovednavigasjon">
+                <div class="text-2xl font-bold">
+                    <a href="#" class="text-gray-900 hover:text-blue-600 transition-colors">Mathias</a>
                 </div>
-                <button class="hamburger" aria-label="Åpne navigasjonsmeny" aria-expanded="false" aria-controls="nav-menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                <button class="lg:hidden group p-2 rounded-lg hover:bg-gray-100 transition-colors" 
+                        aria-label="Åpne navigasjonsmeny" 
+                        aria-expanded="false" 
+                        aria-controls="nav-menu">
+                    <div class="w-6 h-5 relative flex flex-col justify-between">
+                        <span class="w-full h-0.5 bg-gray-600 transform transition-all duration-300 group-[.active]:rotate-45 group-[.active]:translate-y-2"></span>
+                        <span class="w-full h-0.5 bg-gray-600 transition-all duration-300 group-[.active]:opacity-0"></span>
+                        <span class="w-full h-0.5 bg-gray-600 transform transition-all duration-300 group-[.active]:-rotate-45 group-[.active]:-translate-y-2"></span>
+                    </div>
                 </button>
-                <ul class="nav-links" id="nav-menu">
-                    <li><a href="#stacks">Teknologier</a></li>
-                    <li><a href="#education">Utdanning</a></li>
-                    <li><a href="#projects">Prosjekter</a></li>
-                    <li><a href="#contact">Kontakt</a></li>
+                <ul class="hidden lg:flex space-x-8" id="nav-menu">
+                    <li><a href="#stacks" class="text-gray-600 hover:text-blue-600 transition-colors">Teknologier</a></li>
+                    <li><a href="#education" class="text-gray-600 hover:text-blue-600 transition-colors">Utdanning</a></li>
+                    <li><a href="#projects" class="text-gray-600 hover:text-blue-600 transition-colors">Prosjekter</a></li>
+                    <li><a href="#contact" class="text-gray-600 hover:text-blue-600 transition-colors">Kontakt</a></li>
                 </ul>
             </nav>
         </header>
     
-        <section class="intro" data-aos="fade-in">
+        <section class="flex flex-col md:flex-row items-center gap-8 py-16" data-aos="fade-in">
             <img
                 src="img/image.png"
                 alt="Portrait av Mathias Felde Haugen"
                 loading="lazy"
-                class="intro-image"
+                class="w-48 h-48 md:w-64 md:h-64 rounded-full object-cover shadow-lg"
             >
-            <div class="intro-content">
-                <h1>Hei! Jeg heter Mathias Felde Haugen</h1>
-                <p>
+            <div class="max-w-2xl">
+                <h1 class="text-4xl font-bold mb-4 text-gray-900">
+                    Hei! Jeg heter Mathias Felde Haugen
+                    <br>
+                    <span id="typed" class="text-blue-600"></span>
+                </h1>
+                <p class="text-lg text-gray-700 mb-4">
                     Jeg er en nyutdannet utvikler. Min lidenskap er å bygge funksjonelle, vakre brukeropplevelser både på front-end og back-end.
                 </p>
-                <p>
-                    Se noen av mine <a href="#projects">prosjekter</a> nedenfor.
+                <p class="text-lg text-gray-700 mb-6">
+                    Se noen av mine <a href="#projects" class="text-blue-600 hover:underline">prosjekter</a> nedenfor.
                 </p>
-                <div class="download-cv">
+                <div>
                     <a
                         href="MathiasCV-OnlineVersion.docx"
                         download
-                        class="btn btn-primary"
+                        class="inline-block px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
                         aria-label="Last ned CV"
                     >
                         Last ned CV
@@ -87,290 +102,371 @@
         </section>
         
         
-        <section class="stacks" id="stacks" data-aos="fade-up">
-            <h2 class="border-bottom">Teknologier</h2>
-            <div class="category">
-                <h3>Programmeringsspråk</h3>
-                <div class="languages">
-                    <div class="language">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" loading="lazy">
-                        <p>Java</p>
-                    </div>
-                    <div class="language">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" loading="lazy">
-                        <p>JavaScript</p>
-                    </div>
-                    <div class="language">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript" loading="lazy">
-                        <p>TypeScript</p>
-                    </div>
-                    <div class="language">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" alt="Kotlin" loading="lazy">
-                        <p>Kotlin</p>
-                    </div>
-                    <div class="language">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C" loading="lazy">
-                        <p>C</p>
-                    </div>
-                    <div class="language">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" alt="C#" loading="lazy">
-                        <p>C#</p>
-                    </div>
-                    <div class="language">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" loading="lazy">
-                        <p>Python</p>
-                    </div>
-                </div>
-            </div>
-        
-            <div class="category">
-                <h3>Full-Stack Development</h3>
-                <div class="languages">
-                    <div class="language">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" loading="lazy">
-                        <p>HTML5</p>
-                    </div>
-                    <div class="language">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" loading="lazy">
-                        <p>CSS3</p>
-                    </div>
-                    <div class="language">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" loading="lazy">
-                        <p>React</p>
-                    </div>
-                    <div class="language">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" loading="lazy">
-                        <p>Node.js</p>
-                    </div>
-                    <div class="language">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="Next.js" loading="lazy">
-                        <p>Next.js</p>
-                    </div>
-                    <div class="language">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg" alt="Tailwind CSS" loading="lazy" style="width: 80px; height: 80px;">
-                        <p>Tailwind CSS</p>
-                    </div>
-                </div>
-            </div>
-        
-            <div class="category">
-                <h3>Database</h3>
-                <div class="languages">
-                    <div class="language">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL" loading="lazy">
-                        <p>SQL</p>
-                    </div>
-                    <div class="language">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="NoSQL" loading="lazy">
-                        <p>NoSQL</p>
-                    </div>
-                    <div class="language">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" alt="Firebase" loading="lazy">
-                        <p>Firebase</p>
-                    </div>
-                    <div class="language">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" loading="lazy">
-                        <p>PostgreSQL</p>
-                    </div>
-                </div>
-            </div>
-        
-            <div class="category">
-                <h3>Verktøy</h3>
-                <div class="languages">
-                    <div class="language">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" loading="lazy">
-                        <p>GitHub</p>
-                    </div>
-                    <div class="language">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" loading="lazy">
-                        <p>Git</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    
-        <section class="education" id="education" data-aos="fade-up">
-            <h2>Utdanning</h2>
-            <div class="education-wrapper">
-                <div class="education-item">
-                    <h3>Bachelorgrad i Informatikk</h3>
-                    <p>HIOF</p>
-                    <span>2021 - 2024</span>
-                    <p>Spesialisering innen programmering. Fullførte flere prosjekter som fokuserer på moderne webteknologier og beste praksis.</p>
-                </div>
-            </div>
-        </section>
-        
-        <section class="projects" id="projects" data-aos="fade-up">
-            <h2>Prosjekter</h2>
-            
-            <div class="projects-wrapper">
-                
-                <div class="project" data-aos="fade-right">
-                    <img src="img/playground.png" alt="Screenshot av UsableHoppers Plugin" loading="lazy">
-                    <div class="project-details">
-                        <h3>Playground</h3>
-                        <p>Velkommen til min digitale lekeplass! Her eksperimenterer jeg med forskjellige UI-komponenter, funksjonaliteter, og alt det morsomme som gjør webutvikling spennende. Fra knapper til avanserte grafer – alt finner du her, pakket inn i et enkelt React-prosjekt med Tailwind. Dette er hvor jeg tester ut nye ideer og bygger kule ting, så ta en titt rundt og se hva som skjer!</p>
-                        <div class="tech-stack">
-                            <span>JavaScript</span> <span>React</span> <span>TailwindCSS</span>
+        <section id="stacks" class="py-16" data-aos="fade-up">
+            <h2 class="text-3xl font-bold mb-12 pb-4 border-b border-gray-200">Teknologier</h2>
+            <div class="space-y-12">
+                <div>
+                    <h3 class="text-2xl font-semibold mb-6">Programmeringsspråk</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-8">
+                        <div class="flex flex-col items-center">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" 
+                                 alt="Java" 
+                                 loading="lazy"
+                                 class="w-16 h-16 mb-2">
+                            <p class="text-gray-700">Java</p>
                         </div>
-                        <div class="links">
-                            <a href="http://playground.mathiashaugen.no" target="_blank" rel="noopener noreferrer">Link</a>
+                        <div class="flex flex-col items-center">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" 
+                                 alt="JavaScript" 
+                                 loading="lazy"
+                                 class="w-16 h-16 mb-2">
+                            <p class="text-gray-700">JavaScript</p>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" 
+                                 alt="TypeScript" 
+                                 loading="lazy"
+                                 class="w-16 h-16 mb-2">
+                            <p class="text-gray-700">TypeScript</p>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" 
+                                 alt="Kotlin" 
+                                 loading="lazy"
+                                 class="w-16 h-16 mb-2">
+                            <p class="text-gray-700">Kotlin</p>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" 
+                                 alt="C" 
+                                 loading="lazy"
+                                 class="w-16 h-16 mb-2">
+                            <p class="text-gray-700">C</p>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" 
+                                 alt="C#" 
+                                 loading="lazy"
+                                 class="w-16 h-16 mb-2">
+                            <p class="text-gray-700">C#</p>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" 
+                                 alt="Python" 
+                                 loading="lazy"
+                                 class="w-16 h-16 mb-2">
+                            <p class="text-gray-700">Python</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Full-Stack Development -->
+                <div>
+                    <h3 class="text-2xl font-semibold mb-6">Full-Stack Development</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+                        <div class="flex flex-col items-center">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" 
+                                 alt="HTML5" 
+                                 loading="lazy"
+                                 class="w-16 h-16 mb-2">
+                            <p class="text-gray-700">HTML5</p>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" 
+                                 alt="CSS3" 
+                                 loading="lazy"
+                                 class="w-16 h-16 mb-2">
+                            <p class="text-gray-700">CSS3</p>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" 
+                                 alt="React" 
+                                 loading="lazy"
+                                 class="w-16 h-16 mb-2">
+                            <p class="text-gray-700">React</p>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" 
+                                 alt="Node.js" 
+                                 loading="lazy"
+                                 class="w-16 h-16 mb-2">
+                            <p class="text-gray-700">Node.js</p>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" 
+                                 alt="Next.js" 
+                                 loading="lazy"
+                                 class="w-16 h-16 mb-2">
+                            <p class="text-gray-700">Next.js</p>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg" 
+                                 alt="Tailwind CSS" 
+                                 loading="lazy"
+                                 class="w-16 h-16 mb-2">
+                            <p class="text-gray-700">Tailwind CSS</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="project" data-aos="fade-right">
-                    <img src="img/rust.png" alt="Screenshot av UsableHoppers Plugin" loading="lazy">
-                    <div class="project-details">
-                        <h3>Lucky Crates Plugin</h3>
-                        <p>En plugin som går ut på å lage tilfeldige kister med innhold i og sprer dem rundt på kartet, for å skape morro og engasjement.</p>
-                        <div class="tech-stack">
-                            <span>C#</span> <span>Unity</span> <span>Oxide API</span>
+                <!-- Database -->
+                <div>
+                    <h3 class="text-2xl font-semibold mb-6">Database</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                        <div class="flex flex-col items-center">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" 
+                                 alt="SQL" 
+                                 loading="lazy"
+                                 class="w-16 h-16 mb-2">
+                            <p class="text-gray-700">SQL</p>
                         </div>
-                        <div class="links">
-                            <a href="https://codefling.com/plugins/lucky-crates" target="_blank" rel="noopener noreferrer">Link</a>
+                        <div class="flex flex-col items-center">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" 
+                                 alt="NoSQL" 
+                                 loading="lazy"
+                                 class="w-16 h-16 mb-2">
+                            <p class="text-gray-700">NoSQL</p>
                         </div>
-                    </div>
-                </div>
-                
-                <div class="project" data-aos="fade-right">
-                    <img src="img/rust.png" alt="Screenshot av UsableHoppers Plugin" loading="lazy">
-                    <div class="project-details">
-                        <h3>UsableHoppers Plugin</h3>
-                        <p>En plugin som går ut på å lage funksjonelle hoppers i Rust basert på Minecraft-hoppermekanikk.</p>
-                        <div class="tech-stack">
-                            <span>C#</span> <span>Unity</span> <span>Oxide API</span>
+                        <div class="flex flex-col items-center">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" 
+                                 alt="Firebase" 
+                                 loading="lazy"
+                                 class="w-16 h-16 mb-2">
+                            <p class="text-gray-700">Firebase</p>
                         </div>
-                        <div class="links">
-                            <a href="https://codefling.com/plugins/usable-hoppers" target="_blank" rel="noopener noreferrer">Link</a>
-                        </div>
-                    </div>
-                </div>
-        
-                <div class="project" data-aos="fade-left">
-                    <img src="img/rust.png" alt="Screenshot av UsableDroppers Plugin" loading="lazy">
-                    <div class="project-details">
-                        <h3>UsableDroppers Plugin</h3>
-                        <p>En plugin som dropper ting ut fra kister.</p>
-                        <div class="tech-stack">
-                            <span>C#</span> <span>Unity</span> <span>Oxide API</span>
-                        </div>
-                        <div class="links">
-                            <a href="https://codefling.com/plugins/usable-droppers" target="_blank" rel="noopener noreferrer">Link</a>
+                        <div class="flex flex-col items-center">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" 
+                                 alt="PostgreSQL" 
+                                 loading="lazy"
+                                 class="w-16 h-16 mb-2">
+                            <p class="text-gray-700">PostgreSQL</p>
                         </div>
                     </div>
                 </div>
-                
-                <div class="project" data-aos="fade-right">
-                    <img src="img/reddknekken.png" alt="Screenshot av UsableHoppers Plugin" loading="lazy">
-                    <div class="project-details">
-                        <h3>Bacheloroppgave Østfoldmuseene</h3>
-                        <p>Spillutvikling med fokus på historie formidling.</p>
-                        <div class="tech-stack">
-                            <span>JavaScript</span> <span>Phaser</span> <span>Firebase</span>
+
+                <!-- Verktøy -->
+                <div>
+                    <h3 class="text-2xl font-semibold mb-6">Verktøy</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                        <div class="flex flex-col items-center">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" 
+                                 alt="GitHub" 
+                                 loading="lazy"
+                                 class="w-16 h-16 mb-2">
+                            <p class="text-gray-700">GitHub</p>
                         </div>
-                        <div class="links">
-                            <a href="https://bo-24-53.vercel.app" target="_blank" rel="noopener noreferrer">Link</a>
+                        <div class="flex flex-col items-center">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" 
+                                 alt="Git" 
+                                 loading="lazy"
+                                 class="w-16 h-16 mb-2">
+                            <p class="text-gray-700">Git</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
     
-        <section class="contact" id="contact" data-aos="fade-up">
-            <h2>Kontakt meg!</h2>
-            <div class="social-icons">
-                <a href="https://www.linkedin.com/in/mathias-felde-haugen-355b272a4/" target="_blank" rel="noopener noreferrer">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" loading="lazy">
-                    <p>LinkedIn</p>
+        <section id="education" class="py-16" data-aos="fade-up">
+            <h2 class="text-3xl font-bold mb-12 pb-4 border-b border-gray-200">Utdanning</h2>
+            <div class="max-w-3xl">
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h3 class="text-2xl font-semibold mb-2">Bachelorgrad i Informatikk</h3>
+                    <p class="text-lg text-blue-600 mb-1">HIOF</p>
+                    <span class="text-gray-600 mb-4 block">2021 - 2024</span>
+                    <p class="text-gray-700">Spesialisering innen programmering. Fullførte flere prosjekter som fokuserer på moderne webteknologier og beste praksis.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="projects" class="py-16" data-aos="fade-up">
+            <h2 class="text-3xl font-bold mb-12 pb-4 border-b border-gray-200">Prosjekter</h2>
+            <div class="grid gap-8 md:grid-cols-2">
+                <div class="bg-white/80 backdrop-blur-sm rounded-lg shadow-md overflow-hidden transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" 
+                     data-aos="fade-right">
+                    <img src="img/playground.png" 
+                         alt="Screenshot av Playground" 
+                         loading="lazy"
+                         class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold mb-4">Playground</h3>
+                        <p class="text-gray-700 mb-4">Velkommen til min digitale lekeplass! Her eksperimenterer jeg med forskjellige UI-komponenter, funksjonaliteter, og alt det morsomme som gjør webutvikling spennende. Fra knapper til avanserte grafer – alt finner du her, pakket inn i et enkelt React-prosjekt med Tailwind. Dette er hvor jeg tester ut nye ideer og bygger kule ting, så ta en titt rundt og se hva som skjer!</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-white/30 backdrop-blur-sm border border-white/50 text-gray-800 rounded-full text-sm shadow-sm">JavaScript</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">React</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">TailwindCSS</span>
+                        </div>
+                        <div class="flex justify-end">
+                            <a href="http://playground.mathiashaugen.no" 
+                               target="_blank" 
+                               rel="noopener noreferrer"
+                               class="text-blue-600 hover:text-blue-800 transition-colors">Link</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white/80 backdrop-blur-sm rounded-lg shadow-md overflow-hidden transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" 
+                     data-aos="fade-right">
+                    <img src="img/rust.png" 
+                         alt="Screenshot av Lucky Crates Plugin" 
+                         loading="lazy"
+                         class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold mb-4">Lucky Crates Plugin</h3>
+                        <p class="text-gray-700 mb-4">En plugin som går ut på å lage tilfeldige kister med innhold i og sprer dem rundt på kartet, for å skape morro og engasjement.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">C#</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">Unity</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">Oxide API</span>
+                        </div>
+                        <div class="flex justify-end">
+                            <a href="https://codefling.com/plugins/lucky-crates" 
+                               target="_blank" 
+                               rel="noopener noreferrer"
+                               class="text-blue-600 hover:text-blue-800 transition-colors">Link</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white/80 backdrop-blur-sm rounded-lg shadow-md overflow-hidden transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" 
+                     data-aos="fade-right">
+                    <img src="img/rust.png" 
+                         alt="Screenshot av UsableHoppers Plugin" 
+                         loading="lazy"
+                         class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold mb-4">UsableHoppers Plugin</h3>
+                        <p class="text-gray-700 mb-4">En plugin som går ut på å lage funksjonelle hoppers i Rust basert på Minecraft-hoppermekanikk.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">C#</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">Unity</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">Oxide API</span>
+                        </div>
+                        <div class="flex justify-end">
+                            <a href="https://codefling.com/plugins/usable-hoppers" 
+                               target="_blank" 
+                               rel="noopener noreferrer"
+                               class="text-blue-600 hover:text-blue-800 transition-colors">Link</a>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="bg-white/80 backdrop-blur-sm rounded-lg shadow-md overflow-hidden transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" 
+                     data-aos="fade-left">
+                    <img src="img/rust.png" 
+                         alt="Screenshot av UsableDroppers Plugin" 
+                         loading="lazy"
+                         class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold mb-4">UsableDroppers Plugin</h3>
+                        <p class="text-gray-700 mb-4">En plugin som dropper ting ut fra kister.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">C#</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">Unity</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">Oxide API</span>
+                        </div>
+                        <div class="flex justify-end">
+                            <a href="https://codefling.com/plugins/usable-droppers" 
+                               target="_blank" 
+                               rel="noopener noreferrer"
+                               class="text-blue-600 hover:text-blue-800 transition-colors">Link</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white/80 backdrop-blur-sm rounded-lg shadow-md overflow-hidden transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" 
+                     data-aos="fade-right">
+                    <img src="img/reddknekken.png" 
+                         alt="Screenshot av Bacheloroppgave Østfoldmuseene" 
+                         loading="lazy"
+                         class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold mb-4">Bacheloroppgave Østfoldmuseene</h3>
+                        <p class="text-gray-700 mb-4">Spillutvikling med fokus på historie formidling.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">JavaScript</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">Phaser</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">Firebase</span>
+                        </div>
+                        <div class="flex justify-end">
+                            <a href="https://bo-24-53.vercel.app" 
+                               target="_blank" 
+                               rel="noopener noreferrer"
+                               class="text-blue-600 hover:text-blue-800 transition-colors">Link</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <section id="contact" class="py-16" data-aos="fade-up">
+            <h2 class="text-3xl font-bold mb-12 pb-4 border-b border-gray-200">Kontakt meg!</h2>
+            <div class="flex justify-center gap-8 mb-8">
+                <a href="https://www.linkedin.com/in/mathias-felde-haugen-355b272a4/" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   class="flex flex-col items-center group">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-blue-600 rounded-full opacity-0 group-hover:opacity-20 transform scale-150 group-hover:scale-100 transition-all duration-300"></div>
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" 
+                             alt="LinkedIn" 
+                             loading="lazy"
+                             class="w-12 h-12 mb-2 transform group-hover:scale-110 transition-transform duration-300">
+                    </div>
+                    <p class="text-gray-700 group-hover:text-blue-600 transition-colors">LinkedIn</p>
                 </a>
-                <a href="https://github.com/matfelhau" target="_blank" rel="noopener noreferrer">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" loading="lazy">
-                    <p>GitHub</p>
+                <a href="https://github.com/matfelhau" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   class="flex flex-col items-center group">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" 
+                         alt="GitHub" 
+                         loading="lazy"
+                         class="w-12 h-12 mb-2 group-hover:scale-110 transition-transform">
+                    <p class="text-gray-700 group-hover:text-blue-600 transition-colors">GitHub</p>
                 </a>
-                <a href="mailto:mathiashaugen02@gmail.com">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" alt="Email" loading="lazy">
-                    <p>E-post</p>
+                <a href="mailto:mathiashaugen02@gmail.com"
+                   class="flex flex-col items-center group">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" 
+                         alt="Email" 
+                         loading="lazy"
+                         class="w-12 h-12 mb-2 group-hover:scale-110 transition-transform">
+                    <p class="text-gray-700 group-hover:text-blue-600 transition-colors">E-post</p>
                 </a>
             </div>
-            <div class="download-cv">
-                <a href="MathiasCV-OnlineVersion.docx" download>Last ned CV
+            <div class="flex justify-center">
+                <a href="MathiasCV-OnlineVersion.docx" 
+                   download
+                   class="inline-block px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+                    Last ned CV
                 </a>
             </div>
         </section>
         
-        <button id="scrollTopBtn" title="Gå til toppen" aria-label="Gå til toppen">
+        <button id="scrollTopBtn" 
+                title="Gå til toppen" 
+                aria-label="Gå til toppen"
+                class="fixed bottom-8 right-8 bg-blue-600/80 backdrop-blur-sm text-white w-12 h-12 rounded-full flex items-center justify-center text-2xl hover:bg-blue-700 transition-all duration-300 transform hover:scale-110 opacity-0 pointer-events-none">
             &#8679;
         </button>
     
-        <footer>
-            <p>Laget av Mathias Felde Haugen © 2025</p>
-            <p id="last-updated">Sist oppdatert: </p>
-            <p><a href="policy.html" target="_blank" rel="noopener noreferrer">Cookie Policy</a></p>     
+        <footer class="py-8 text-center border-t border-gray-200">
+            <p class="text-gray-600 mb-2">Laget av Mathias Felde Haugen © 2025</p>
+            <p id="last-updated" class="text-gray-600 mb-2">Sist oppdatert: </p>
+            <p><a href="policy.html" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 transition-colors">Cookie Policy</a></p>     
         </footer>  
     </div>
             
     <!-- Cookie Consent Banner -->
-    <div id="cookieConsent">
-        <p>
-            Dette nettstedet bruker cookies for å forbedre din opplevelse. Ved å fortsette godtar du vår <a href="policy.html" target="_blank" rel="noopener noreferrer">cookie policy</a>. 
-            <button id="acceptCookies" class="btn btn-primary">Jeg godtar</button>
-            <button id="declineCookies" class="btn btn-secondary">Avslå</button>
+    <div id="cookieConsent" class="hidden fixed bottom-0 w-full bg-gray-900 bg-opacity-90 text-white p-4 text-center z-50">
+        <p class="max-w-4xl mx-auto text-sm">
+            Dette nettstedet bruker cookies for å forbedre din opplevelse. Ved å fortsette godtar du vår 
+            <a href="policy.html" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:underline">cookie policy</a>. 
+            <button id="acceptCookies" class="ml-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors">Jeg godtar</button>
+            <button id="declineCookies" class="ml-2 px-4 py-2 bg-gray-600 text-white rounded hover:bg-gray-700 transition-colors">Avslå</button>
         </p>
     </div>
 
-    <!-- Cookie Consent Styles -->
-    <style>
-        #cookieConsent {
-            background-color: rgba(0, 0, 0, 0.8);
-            color: white;
-            padding: 15px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            text-align: center;
-            z-index: 1000;
-            display: none;
-        }
-        #cookieConsent p {
-            margin: 0;
-            font-size: 14px;
-        }
-        #cookieConsent button {
-            margin-left: 10px;
-            padding: 10px;
-            background-color: #5A67D8;
-            color: #fff;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-        #cookieConsent .btn-secondary {
-            background-color: #555;
-        }
-    </style>
-
-    <!-- Cookie Consent and Google Analytics Consent Script -->
-    <script>
-        // Show the cookie banner if no consent has been provided
-        if (!localStorage.getItem('cookieConsent')) {
-            document.getElementById('cookieConsent').style.display = 'block';
-        }
-
-        document.getElementById('acceptCookies').addEventListener('click', function() {
-            localStorage.setItem('cookieConsent', 'accepted');
-            document.getElementById('cookieConsent').style.display = 'none';
-            loadGoogleAnalytics();
-        });
-
-        document.getElementById('declineCookies').addEventListener('click', function() {
-            localStorage.setItem('cookieConsent', 'declined');
-            document.getElementById('cookieConsent').style.display = 'none';
-        });
-    </script>
-    
     <script>
         const lastUpdated = new Date(document.lastModified);
         const options = { year: 'numeric', month: 'long', day: 'numeric' };
@@ -419,6 +515,37 @@
         });
     </script>
     <script src="effects.js"></script>
+
+    <script>
+        const scrollTopBtn = document.getElementById('scrollTopBtn');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollTopBtn.classList.remove('opacity-0', 'pointer-events-none');
+                scrollTopBtn.classList.add('opacity-100');
+            } else {
+                scrollTopBtn.classList.add('opacity-0', 'pointer-events-none');
+                scrollTopBtn.classList.remove('opacity-100');
+            }
+        });
+
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+
+    <script>
+        new Typed('#typed', {
+            strings: ['Frontend Utvikler', 'Backend Utvikler', 'Full-Stack Utvikler'],
+            typeSpeed: 50,
+            backSpeed: 30,
+            loop: true,
+            backDelay: 1500
+        });
+    </script>
 
 </body>
 </html>
